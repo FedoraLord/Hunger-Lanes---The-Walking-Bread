@@ -279,7 +279,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 360761993}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5346667, y: 0.3103697}
   m_AnchorMax: {x: 1, y: 0.9524786}
@@ -348,8 +348,8 @@ RectTransform:
   m_Children:
   - {fileID: 118175768}
   - {fileID: 2009921955}
-  - {fileID: 142264873}
   - {fileID: 399457311}
+  - {fileID: 142264873}
   m_Father: {fileID: 891651866}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -419,7 +419,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 360761993}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.3103697}
   m_AnchorMax: {x: 0.5, y: 0.93584824}
@@ -470,7 +470,7 @@ GameObject:
   - component: {fileID: 479455726}
   - component: {fileID: 479455725}
   m_Layer: 5
-  m_Name: Text
+  m_Name: D2 Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -608,7 +608,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 701108105}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1375661089}
+        m_MethodName: DecisionButtonClicked
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &701108105
@@ -872,7 +883,7 @@ GameObject:
   - component: {fileID: 1053574467}
   - component: {fileID: 1053574466}
   m_Layer: 5
-  m_Name: Text
+  m_Name: D1 Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -964,11 +975,43 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   titleScreen: {fileID: 6367563}
   gameScreen: {fileID: 360761992}
+  background: {fileID: 118175769}
+  leftCharacter: {fileID: 399457312}
+  rightCharacter: {fileID: 142264874}
+  dialogueTextBox: {fileID: 1799395331}
+  buttons:
+  - button: {fileID: 701108104}
+    textComponent: {fileID: 1053574466}
+  - button: {fileID: 1952419914}
+    textComponent: {fileID: 479455725}
+  TESTING_StartingEventName: 
+  maxCharsPerDialogue: 500
+  textWipeSpeed: 0.03
   events:
-  - eventName: Intro
+  - name: something
     background: {fileID: 21300000, guid: e340d52967105d04ea9ba0fdc4ec89b8, type: 3}
     dialogues:
     - text: hi mr meatloaf how r u
+      leftCharacter: {fileID: 21300000, guid: 2e2446c79df299c41aaf6eb91d8b147c, type: 3}
+      rightCharacter: {fileID: 0}
+    - text: Lorem ipsum dolor sit amet, noster persecuti expetendis ei pri, eu ipsum
+        neglegentur per. Ut explicari adolescens sit. Feugiat ornatus forensibus ut
+        vis, meis vituperatoribus no est, usu ad inani elitr democritum. Nam homero
+        oblique id. Mei ex verear consectetuer.  Utinam eruditi sit no. Atqui doctus
+        cu sea. No ullum putent honestatis vis. Per id case latine rationibus, dico
+        dolores argumentum ea mel, quidam utroque mandamus an quo. Ad tota atqui facilisis
+        vel, vidit verterem probatus cu duo.  Et vel laboramus rationibus comprehensam,
+        ex menandri antiopam ius, facete oportere assueverit an nam. Consulatu pertinacia
+        efficiantur usu et, an zril tincidunt per, quem temporibus nec et. Ut mea
+        odio neglegentur, sit lorem definiebas at. Quo no ullum veniam. Vis singulis
+        perpetua te, has id summo mazim.  Mutat malorum aliquando an quo, ut nec eruditi
+        luptatum. In suavitate democritum adolescens duo. Cu vel equidem deleniti,
+        ex omittam eleifend quaerendum mea, vivendo ancillae mediocrem vix ne. Sed
+        choro quidam sadipscing ne, usu rebum verterem in. Te sed integre verterem
+        accusamus, te ignota tamquam nostrum vel. Cu justo nostrum mel, usu movet
+        periculis at.  Debet partiendo ei vix, ne sit magna porro ceteros. Partem
+        fierent temporibus at sea. Te aperiri maiorum maiestatis vim, id vis agam
+        offendit. Ocurreret delicatissimi eu mei.
       leftCharacter: {fileID: 21300000, guid: 2e2446c79df299c41aaf6eb91d8b147c, type: 3}
       rightCharacter: {fileID: 0}
     - text: pretty bad my gurl just dumped me
@@ -982,18 +1025,30 @@ MonoBehaviour:
       rightCharacter: {fileID: 21300000, guid: da755748f1910cb45b3ffe8fb42d7245, type: 3}
     decisions:
     - buttonText: Give her the D
-      navigateToEventName: xxx
+      nextEvent: xxx
     - buttonText: shit in her mouth (not that im into that or anything........)
-      navigateToEventName: scat scene
-  - eventName: More Dialogue
-    background: {fileID: 0}
+      nextEvent: scat scene
+  - name: xxx
+    background: {fileID: 21300000, guid: 63b6fca296549e24db575beeb298ff7f, type: 3}
     dialogues:
-    - text: 
-      leftCharacter: {fileID: 0}
-      rightCharacter: {fileID: 0}
+    - text: fingur me w thos floating severed hands bb
+      leftCharacter: {fileID: 21300000, guid: 2e2446c79df299c41aaf6eb91d8b147c, type: 3}
+      rightCharacter: {fileID: 21300000, guid: da755748f1910cb45b3ffe8fb42d7245, type: 3}
     decisions:
-    - buttonText: 
-      navigateToEventName: 
+    - buttonText: poop in mouth
+      nextEvent: scat scene
+  - name: scat scene
+    background: {fileID: 21300000, guid: 4ef512584817a624ea113084dcb64d5f, type: 3}
+    dialogues:
+    - text: '*poops in mouth*'
+      leftCharacter: {fileID: 21300000, guid: 2e2446c79df299c41aaf6eb91d8b147c, type: 3}
+      rightCharacter: {fileID: 0}
+    - text: mmmm tastes like hershey's chocolate
+      leftCharacter: {fileID: 0}
+      rightCharacter: {fileID: 21300000, guid: da755748f1910cb45b3ffe8fb42d7245, type: 3}
+    decisions:
+    - buttonText: single option
+      nextEvent: 
 --- !u!4 &1375661090
 Transform:
   m_ObjectHideFlags: 0
@@ -1460,7 +1515,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1952419915}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1375661089}
+        m_MethodName: DecisionButtonClicked
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1952419915

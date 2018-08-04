@@ -7,7 +7,7 @@ using UnityEngine;
 [Serializable]
 public class Event : System.Object
 {
-    public string eventName;
+    public string name;
     public Sprite background;
     public Dialogue[] dialogues;
     public Decision[] decisions;

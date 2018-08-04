@@ -7,5 +7,5 @@ using System.Text;
 public class Decision : System.Object
 {
     public string buttonText;
-    public string navigateToEventName;
+    public string nextEvent;
 }
