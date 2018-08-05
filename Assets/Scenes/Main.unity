@@ -283,7 +283,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5346667, y: 0.3103697}
   m_AnchorMax: {x: 1, y: 0.9524786}
-  m_AnchoredPosition: {x: 1.1000061, y: -0.099998474}
+  m_AnchoredPosition: {x: 1.1000366, y: -0.099998474}
   m_SizeDelta: {x: -2.2999992, y: -1.6000004}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &142264874
@@ -335,7 +335,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &360761993
 RectTransform:
   m_ObjectHideFlags: 0
@@ -517,7 +517,7 @@ MonoBehaviour:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 14
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 10
     m_MaxSize: 40
     m_Alignment: 4
@@ -930,7 +930,7 @@ MonoBehaviour:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 14
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 10
     m_MaxSize: 40
     m_Alignment: 4
@@ -985,69 +985,303 @@ MonoBehaviour:
   - button: {fileID: 1952419914}
     textComponent: {fileID: 479455725}
   TESTING_StartingEventName: 
-  maxCharsPerDialogue: 500
+  maxCharsPerDialogue: 600
   textWipeSpeed: 0.03
   events:
-  - name: something
+  - name: Intro_Story
     background: {fileID: 21300000, guid: e340d52967105d04ea9ba0fdc4ec89b8, type: 3}
     dialogues:
-    - text: hi mr meatloaf how r u
-      leftCharacter: {fileID: 21300000, guid: 2e2446c79df299c41aaf6eb91d8b147c, type: 3}
-      rightCharacter: {fileID: 0}
-    - text: Lorem ipsum dolor sit amet, noster persecuti expetendis ei pri, eu ipsum
-        neglegentur per. Ut explicari adolescens sit. Feugiat ornatus forensibus ut
-        vis, meis vituperatoribus no est, usu ad inani elitr democritum. Nam homero
-        oblique id. Mei ex verear consectetuer.  Utinam eruditi sit no. Atqui doctus
-        cu sea. No ullum putent honestatis vis. Per id case latine rationibus, dico
-        dolores argumentum ea mel, quidam utroque mandamus an quo. Ad tota atqui facilisis
-        vel, vidit verterem probatus cu duo.  Et vel laboramus rationibus comprehensam,
-        ex menandri antiopam ius, facete oportere assueverit an nam. Consulatu pertinacia
-        efficiantur usu et, an zril tincidunt per, quem temporibus nec et. Ut mea
-        odio neglegentur, sit lorem definiebas at. Quo no ullum veniam. Vis singulis
-        perpetua te, has id summo mazim.  Mutat malorum aliquando an quo, ut nec eruditi
-        luptatum. In suavitate democritum adolescens duo. Cu vel equidem deleniti,
-        ex omittam eleifend quaerendum mea, vivendo ancillae mediocrem vix ne. Sed
-        choro quidam sadipscing ne, usu rebum verterem in. Te sed integre verterem
-        accusamus, te ignota tamquam nostrum vel. Cu justo nostrum mel, usu movet
-        periculis at.  Debet partiendo ei vix, ne sit magna porro ceteros. Partem
-        fierent temporibus at sea. Te aperiri maiorum maiestatis vim, id vis agam
-        offendit. Ocurreret delicatissimi eu mei.
-      leftCharacter: {fileID: 21300000, guid: 2e2446c79df299c41aaf6eb91d8b147c, type: 3}
-      rightCharacter: {fileID: 0}
-    - text: pretty bad my gurl just dumped me
+    - text: "In a magical place called \u201CThe American Buffet\u201D, food creatures
+        lived in harmony with their human consumers. For years the confections, pizzas,
+        condiments, meatloaf, and canned vegetables placed on the buffet line would
+        swim in pools of gravy and steam and they lived happily in bliss."
       leftCharacter: {fileID: 0}
+      rightCharacter: {fileID: 0}
+    decisions:
+    - buttonText: That sounds like a food paradise!
+      nextEvent: Intro_Closing
+  - name: Intro_Closing
+    background: {fileID: 21300000, guid: 13e6b94dce240d644a6e4a24250a0d60, type: 3}
+    dialogues:
+    - text: 'Once The American Buffet closed for the day, the Kitchen Community was
+        free to do as they pleased. '
+      leftCharacter: {fileID: 0}
+      rightCharacter: {fileID: 0}
+    decisions:
+    - buttonText: I want to know what they do after closing!
+      nextEvent: Intro_Gathering
+  - name: Intro_Discussion
+    background: {fileID: 21300000, guid: 04380cc4a1d00a544851e5ddd3b96e27, type: 3}
+    dialogues:
+    - text: "[Mrs. M] \u201CTests show negative...again! At this rate all the perishable
+        foods will be thrown out and The American Buffet will cease to exist!\u201D"
+      leftCharacter: {fileID: 21300000, guid: 01720adee974e2246830e68448c6a421, type: 3}
+      rightCharacter: {fileID: 0}
+    - text: "[B] \u201CHey Mustard, I found these spores leading from the Walk-In
+        Cooler while out on a recon mission earlier today. Take a look\u201D"
+      leftCharacter: {fileID: 21300000, guid: 01720adee974e2246830e68448c6a421, type: 3}
+      rightCharacter: {fileID: 21300000, guid: 3a3452eb5e431124a9ea5db3dc763f39, type: 3}
+    - text: "[Mrs. M] \u201CHi, B. Good to see a friendly face. These spores are new...hmm...if
+        we\u2019re seeing spores this close to the buffet line then DOOM is upon us!\u201D"
+      leftCharacter: {fileID: 21300000, guid: 01720adee974e2246830e68448c6a421, type: 3}
+      rightCharacter: {fileID: 21300000, guid: 3a3452eb5e431124a9ea5db3dc763f39, type: 3}
+    - text: "[B] \u201CFrom what I can tell these are extremely fresh spores. We\u2019ve
+        both got gloves on so we can handle them safely, but don\u2019t let it touch
+        your container or lid for fear of cross contamination.\u201D"
+      leftCharacter: {fileID: 21300000, guid: 01720adee974e2246830e68448c6a421, type: 3}
+      rightCharacter: {fileID: 21300000, guid: 3a3452eb5e431124a9ea5db3dc763f39, type: 3}
+    - text: "[Meathead] \u201CI\u2019m here! Did you need me for something, Mustard?\u201D"
+      leftCharacter: {fileID: 21300000, guid: 63b6fca296549e24db575beeb298ff7f, type: 3}
+      rightCharacter: {fileID: 0}
+    - text: "[B] \u201CDefinitely don\u2019t let HIM, of all foods, touch the spores.
+        It amazes me that he hasn't been affected, yet. Must be all the mystery meat
+        and preservatives.\u201D"
+      leftCharacter: {fileID: 21300000, guid: 63b6fca296549e24db575beeb298ff7f, type: 3}
+      rightCharacter: {fileID: 21300000, guid: 3a3452eb5e431124a9ea5db3dc763f39, type: 3}
+    - text: "[Meathead] \u201CTouch what? I'm not touching anything...except this
+        counter! My body is touching the counter, is that bad? I don't want to die!\u201D"
+      leftCharacter: {fileID: 21300000, guid: 63b6fca296549e24db575beeb298ff7f, type: 3}
+      rightCharacter: {fileID: 21300000, guid: 3a3452eb5e431124a9ea5db3dc763f39, type: 3}
+    - text: "[Mrs. M] \u201CHey Meathead, thanks for coming by. I originally wanted
+        to talk to you about how we can handle the social ramifications of the community
+        as they build into an uproar...but now I have a new mission for you.\u201D"
+      leftCharacter: {fileID: 21300000, guid: 63b6fca296549e24db575beeb298ff7f, type: 3}
+      rightCharacter: {fileID: 21300000, guid: da755748f1910cb45b3ffe8fb42d7245, type: 3}
+    - text: "[B] \u201CWhatever that mission is, you can count me in, too.\u201D"
+      leftCharacter: {fileID: 21300000, guid: 2e2446c79df299c41aaf6eb91d8b147c, type: 3}
+      rightCharacter: {fileID: 21300000, guid: da755748f1910cb45b3ffe8fb42d7245, type: 3}
+    - text: "[Mrs. M] Splendid. Then we\u2019ll leave immediately. The mission is
+        to track down the source of these spores. If I can get a sample from whatever
+        \u201Cpatient zero\u201D is in there, we can possibly find a cure and save
+        The American Buffet!\u201D"
+      leftCharacter: {fileID: 21300000, guid: 2e2446c79df299c41aaf6eb91d8b147c, type: 3}
+      rightCharacter: {fileID: 21300000, guid: da755748f1910cb45b3ffe8fb42d7245, type: 3}
+    - text: "[B] \u201CAs you know, the Walk-In Cooler is a wild place. Meathead will
+        be the muscle, I\u2019ll keep us alive, and you\u2019ll find that sample so
+        we can get back here and save our buffet!\u201D"
+      leftCharacter: {fileID: 21300000, guid: 2e2446c79df299c41aaf6eb91d8b147c, type: 3}
+      rightCharacter: {fileID: 21300000, guid: da755748f1910cb45b3ffe8fb42d7245, type: 3}
+    - text: "[Meathead] \u201CLet\u2019s go save the buffet!\u201D"
+      leftCharacter: {fileID: 21300000, guid: 63b6fca296549e24db575beeb298ff7f, type: 3}
+      rightCharacter: {fileID: 21300000, guid: da755748f1910cb45b3ffe8fb42d7245, type: 3}
+    decisions:
+    - buttonText: To the Walk-In Cooler!
+      nextEvent: Buildup_Cooler
+  - name: Intro_Gathering
+    background: {fileID: 21300000, guid: 04380cc4a1d00a544851e5ddd3b96e27, type: 3}
+    dialogues:
+    - text: They would frolic and sing...until one day the perishable foods began
+        to grow ill. They started growing mold and fungus on their little perishable
+        bodies. The community was in an uproar and the top scientist in the Kitchen
+        Community, Mrs. Mustard, poured herself into finding the source of the problem.
+      leftCharacter: {fileID: 0}
+      rightCharacter: {fileID: 0}
+    decisions:
+    - buttonText: Listen intently to Mrs. Mustard's findings.
+      nextEvent: Intro_Discussion
+  - name: Buildup_Cooler
+    background: {fileID: 21300000, guid: 167288e2657019c47b2d4d705f638ab0, type: 3}
+    dialogues:
+    - text: With an urgent mission at hand, the team approaches the walk-in cooler.
+        B leads the group while checking the floor for tracks and following the trail
+        of spores along the way.
+      leftCharacter: {fileID: 0}
+      rightCharacter: {fileID: 0}
+    - text: "[B] \u201CBe prepared for anything. It\u2019s been a while since I\u2019ve
+        been in the Walk-In. I once did a 3 week survival trip in here and it was
+        glorious. Living off the land, experiencing nature at its finest...much more
+        peaceful times.\u201D"
+      leftCharacter: {fileID: 0}
+      rightCharacter: {fileID: 21300000, guid: 3a3452eb5e431124a9ea5db3dc763f39, type: 3}
+    - text: "[Mrs. M] \u201CWhat did you live on? You don\u2019t need sustenance\u2026\u201D"
+      leftCharacter: {fileID: 21300000, guid: 01720adee974e2246830e68448c6a421, type: 3}
+      rightCharacter: {fileID: 21300000, guid: 3a3452eb5e431124a9ea5db3dc763f39, type: 3}
+    - text: "[Meathead] \u201CB plays by their own rules. I normally just listen and
+        nod cause the stuff they say sounds cool. Y\u2019know, survival stuff and
+        adventures. WE\u2019RE ON AN ADVENTURE!\u201D"
+      leftCharacter: {fileID: 21300000, guid: 01720adee974e2246830e68448c6a421, type: 3}
       rightCharacter: {fileID: 21300000, guid: 6478f4f881242c74fac7f25c6c19896a, type: 3}
-    - text: o shit now she can suc on mah diccq
-      leftCharacter: {fileID: 21300000, guid: 2e2446c79df299c41aaf6eb91d8b147c, type: 3}
-      rightCharacter: {fileID: 0}
-    - text: hey boo can i succ on yah diccq
+    - text: "[Mrs. M] \u201CNever lose your innocence Meathead. Ever after what we\u2019ll
+        possibly see in here.\u201D"
+      leftCharacter: {fileID: 21300000, guid: 01720adee974e2246830e68448c6a421, type: 3}
+      rightCharacter: {fileID: 21300000, guid: 6478f4f881242c74fac7f25c6c19896a, type: 3}
+    - text: "[B] \u201CShhh...something is moving up ahead. Stay behind me.\u201D"
       leftCharacter: {fileID: 0}
-      rightCharacter: {fileID: 21300000, guid: da755748f1910cb45b3ffe8fb42d7245, type: 3}
-    decisions:
-    - buttonText: Give her the D
-      nextEvent: xxx
-    - buttonText: shit in her mouth (not that im into that or anything........)
-      nextEvent: scat scene
-  - name: xxx
-    background: {fileID: 21300000, guid: 63b6fca296549e24db575beeb298ff7f, type: 3}
-    dialogues:
-    - text: fingur me w thos floating severed hands bb
-      leftCharacter: {fileID: 21300000, guid: 2e2446c79df299c41aaf6eb91d8b147c, type: 3}
-      rightCharacter: {fileID: 21300000, guid: da755748f1910cb45b3ffe8fb42d7245, type: 3}
-    decisions:
-    - buttonText: poop in mouth
-      nextEvent: scat scene
-  - name: scat scene
-    background: {fileID: 21300000, guid: 4ef512584817a624ea113084dcb64d5f, type: 3}
-    dialogues:
-    - text: '*poops in mouth*'
-      leftCharacter: {fileID: 21300000, guid: 2e2446c79df299c41aaf6eb91d8b147c, type: 3}
-      rightCharacter: {fileID: 0}
-    - text: mmmm tastes like hershey's chocolate
+      rightCharacter: {fileID: 21300000, guid: 3a3452eb5e431124a9ea5db3dc763f39, type: 3}
+    - text: Mumbling and shuffling noises can be heard from off in the distance. A
+        lone silhouette appears against the dimly lit backdrop of the Walk-In Cooler
       leftCharacter: {fileID: 0}
+      rightCharacter: {fileID: 0}
+    decisions:
+    - buttonText: Approach with caution...
+      nextEvent: Buildup_Pizzaface
+  - name: Buildup_Pizzaface
+    background: {fileID: 21300000, guid: f9a34134f9503534fa1b4808cda1fbd0, type: 3}
+    dialogues:
+    - text: A shuffling monstrosity approaches!
+      leftCharacter: {fileID: 0}
+      rightCharacter: {fileID: 0}
+    - text: '[Pizzaface] "Hey guys, I don''t feel so good..."'
+      leftCharacter: {fileID: 21300000, guid: 4ef512584817a624ea113084dcb64d5f, type: 3}
+      rightCharacter: {fileID: 0}
+    - text: "[B] \u201COMG Pizzaface! What happened to you...you look even worse than
+        the rest of the perishables at the buffet. Where in the world have you been\u201D"
+      leftCharacter: {fileID: 21300000, guid: 4ef512584817a624ea113084dcb64d5f, type: 3}
+      rightCharacter: {fileID: 21300000, guid: 3a3452eb5e431124a9ea5db3dc763f39, type: 3}
+    - text: "[Mrs. M] \u201CPizzaface, please stay a safe distance back while we assess
+        the situation.\u201D"
+      leftCharacter: {fileID: 21300000, guid: 4ef512584817a624ea113084dcb64d5f, type: 3}
+      rightCharacter: {fileID: 21300000, guid: da755748f1910cb45b3ffe8fb42d7245, type: 3}
+    - text: "[Meathead] \u201CIt\u2019s just Pizzaface! Why do they have to stay a
+        safe distance away? P-Face gives great hugs!\u201D"
+      leftCharacter: {fileID: 21300000, guid: 4ef512584817a624ea113084dcb64d5f, type: 3}
+      rightCharacter: {fileID: 21300000, guid: 6478f4f881242c74fac7f25c6c19896a, type: 3}
+    - text: "[Mrs. M] \u201CPizzaface shows signs of extreme contamination. Stay away
+        from them, Meathead.\u201D"
+      leftCharacter: {fileID: 21300000, guid: 4ef512584817a624ea113084dcb64d5f, type: 3}
+      rightCharacter: {fileID: 21300000, guid: da755748f1910cb45b3ffe8fb42d7245, type: 3}
+    - text: "[Pizzaface] \u201CThe freezer\u2026*cough*...is broken. There is a mold...fungus...something
+        growing in there that is taking over our brains...brains...brains\u2026\u201D"
+      leftCharacter: {fileID: 21300000, guid: 4ef512584817a624ea113084dcb64d5f, type: 3}
+      rightCharacter: {fileID: 21300000, guid: da755748f1910cb45b3ffe8fb42d7245, type: 3}
+    - text: "[B] \u201COh no...poor Pizzaface\u2026\u201D"
+      leftCharacter: {fileID: 21300000, guid: 4ef512584817a624ea113084dcb64d5f, type: 3}
+      rightCharacter: {fileID: 21300000, guid: 3a3452eb5e431124a9ea5db3dc763f39, type: 3}
+    - text: "[Mrs. M.] \u201CPizzaface, think hard for just a moment. How did it all
+        begin? What caused the fungus to grow and how is it growing in the frozen
+        depths of the Walk-In Freezer?\u201D"
+      leftCharacter: {fileID: 21300000, guid: 4ef512584817a624ea113084dcb64d5f, type: 3}
+      rightCharacter: {fileID: 21300000, guid: da755748f1910cb45b3ffe8fb42d7245, type: 3}
+    - text: "[Pizzaface] \u201CThe Cryo-core is...broken. No more cold.\u201D"
+      leftCharacter: {fileID: 21300000, guid: 4ef512584817a624ea113084dcb64d5f, type: 3}
+      rightCharacter: {fileID: 21300000, guid: da755748f1910cb45b3ffe8fb42d7245, type: 3}
+    - text: "[Mrs. M] \u201CI\u2019ve seen blueprints before for the Cryo-core in
+        the manager\u2019s office. I think I\u2019ll know how to fix it if I can see
+        what\u2019s wrong with it up close.\u201D"
+      leftCharacter: {fileID: 21300000, guid: 4ef512584817a624ea113084dcb64d5f, type: 3}
+      rightCharacter: {fileID: 21300000, guid: da755748f1910cb45b3ffe8fb42d7245, type: 3}
+    - text: "[B] \u201CI\u2019ve only ever been in the Freezer once. This\u2019ll
+        be new territory to explore. I\u2019m...so...excited!\u201D"
+      leftCharacter: {fileID: 21300000, guid: 4ef512584817a624ea113084dcb64d5f, type: 3}
+      rightCharacter: {fileID: 21300000, guid: 3a3452eb5e431124a9ea5db3dc763f39, type: 3}
+    - text: "[Meathead] \u201CWhat about Pizzaface! We can\u2019t just leave them
+        here!\u201D"
+      leftCharacter: {fileID: 21300000, guid: 4ef512584817a624ea113084dcb64d5f, type: 3}
+      rightCharacter: {fileID: 21300000, guid: 6478f4f881242c74fac7f25c6c19896a, type: 3}
+    - text: "[Mrs. M] \u201CIt might not be the best idea to send them back to the
+        kitchen in their condition. I don\u2019t think we can take them with us into
+        the Freezer, though. What do we do?\u201D"
+      leftCharacter: {fileID: 21300000, guid: 4ef512584817a624ea113084dcb64d5f, type: 3}
+      rightCharacter: {fileID: 21300000, guid: da755748f1910cb45b3ffe8fb42d7245, type: 3}
+    - text: "[Pizzaface] \u201CI\u2019m just going to lay down here until you guys
+        get back...so tired\u2026\u201D"
+      leftCharacter: {fileID: 21300000, guid: 4ef512584817a624ea113084dcb64d5f, type: 3}
+      rightCharacter: {fileID: 21300000, guid: da755748f1910cb45b3ffe8fb42d7245, type: 3}
+    - text: "[Mrs. M] \u201COk, we have to act fast. Pizzaface and the kitchen are
+        depending on us! Meathead, use your magnificent strength to open the Freezer
+        door. Watch out for that nasty goop!\u201D"
+      leftCharacter: {fileID: 21300000, guid: 4ef512584817a624ea113084dcb64d5f, type: 3}
       rightCharacter: {fileID: 21300000, guid: da755748f1910cb45b3ffe8fb42d7245, type: 3}
     decisions:
-    - buttonText: single option
+    - buttonText: Let Meathead do his thing with the door.
+      nextEvent: Climax_Freezer
+  - name: Buildup_Pizzaface_Attack
+    background: {fileID: 21300000, guid: f9a34134f9503534fa1b4808cda1fbd0, type: 3}
+    dialogues:
+    - text: A shuffling monstrosity approaches!
+      leftCharacter: {fileID: 0}
+      rightCharacter: {fileID: 0}
+    - text: '[Pizzaface] "Hey guys, I don''t feel so good..."'
+      leftCharacter: {fileID: 21300000, guid: 4ef512584817a624ea113084dcb64d5f, type: 3}
+      rightCharacter: {fileID: 0}
+    - text: "[B] \u201COMG Pizzaface! What happened to you...you look even worse than
+        the rest of the perishables at the buffet. Where in the world have you been\u201D"
+      leftCharacter: {fileID: 21300000, guid: 4ef512584817a624ea113084dcb64d5f, type: 3}
+      rightCharacter: {fileID: 21300000, guid: 3a3452eb5e431124a9ea5db3dc763f39, type: 3}
+    - text: "[Mrs. M] \u201CPizzaface, please stay a safe distance back while we assess
+        the situation.\u201D"
+      leftCharacter: {fileID: 21300000, guid: 4ef512584817a624ea113084dcb64d5f, type: 3}
+      rightCharacter: {fileID: 21300000, guid: da755748f1910cb45b3ffe8fb42d7245, type: 3}
+    - text: "[Meathead] \u201CIt\u2019s just Pizzaface! Why do they have to stay a
+        safe distance away? P-Face gives great hugs!\u201D"
+      leftCharacter: {fileID: 21300000, guid: 4ef512584817a624ea113084dcb64d5f, type: 3}
+      rightCharacter: {fileID: 21300000, guid: 6478f4f881242c74fac7f25c6c19896a, type: 3}
+    - text: "[Mrs. M] \u201CPizzaface shows signs of extreme contamination. Stay away
+        from them, Meathead.\u201D"
+      leftCharacter: {fileID: 21300000, guid: 4ef512584817a624ea113084dcb64d5f, type: 3}
+      rightCharacter: {fileID: 21300000, guid: da755748f1910cb45b3ffe8fb42d7245, type: 3}
+    - text: "[Pizzaface] \u201CThe freezer\u2026*cough*...is broken. There is a mold...fungus...something
+        growing in there that is taking over our brains...brains...brains\u2026\u201D"
+      leftCharacter: {fileID: 21300000, guid: 4ef512584817a624ea113084dcb64d5f, type: 3}
+      rightCharacter: {fileID: 21300000, guid: da755748f1910cb45b3ffe8fb42d7245, type: 3}
+    - text: "[B] \u201COh no...poor Pizzaface\u2026\u201D"
+      leftCharacter: {fileID: 21300000, guid: 4ef512584817a624ea113084dcb64d5f, type: 3}
+      rightCharacter: {fileID: 21300000, guid: 3a3452eb5e431124a9ea5db3dc763f39, type: 3}
+    - text: "[Mrs. M.] \u201CPizzaface, think hard for just a moment. How did it all
+        begin? What caused the fungus to grow and how is it growing in the frozen
+        depths of the Walk-In Freezer?\u201D"
+      leftCharacter: {fileID: 21300000, guid: 4ef512584817a624ea113084dcb64d5f, type: 3}
+      rightCharacter: {fileID: 21300000, guid: da755748f1910cb45b3ffe8fb42d7245, type: 3}
+    - text: "[Pizzaface] \u201CThe Cryo-core is...broken. No more cold.\u201D"
+      leftCharacter: {fileID: 21300000, guid: 4ef512584817a624ea113084dcb64d5f, type: 3}
+      rightCharacter: {fileID: 21300000, guid: da755748f1910cb45b3ffe8fb42d7245, type: 3}
+    - text: "[Mrs. M] \u201CI\u2019ve seen blueprints before for the Cryo-core in
+        the manager\u2019s office. I think I\u2019ll know how to fix it if I can see
+        what\u2019s wrong with it up close.\u201D"
+      leftCharacter: {fileID: 21300000, guid: 4ef512584817a624ea113084dcb64d5f, type: 3}
+      rightCharacter: {fileID: 21300000, guid: da755748f1910cb45b3ffe8fb42d7245, type: 3}
+    - text: "[B] \u201CI\u2019ve only ever been in the Freezer once. This\u2019ll
+        be new territory to explore. I\u2019m...so...excited!\u201D"
+      leftCharacter: {fileID: 21300000, guid: 4ef512584817a624ea113084dcb64d5f, type: 3}
+      rightCharacter: {fileID: 21300000, guid: 3a3452eb5e431124a9ea5db3dc763f39, type: 3}
+    - text: "[Meathead] \u201CWhat about Pizzaface! We can\u2019t just leave them
+        here!\u201D"
+      leftCharacter: {fileID: 21300000, guid: 4ef512584817a624ea113084dcb64d5f, type: 3}
+      rightCharacter: {fileID: 21300000, guid: 6478f4f881242c74fac7f25c6c19896a, type: 3}
+    - text: "[Mrs. M] \u201CIt might not be the best idea to send them back to the
+        kitchen in their condition. I don\u2019t think we can take them with us into
+        the Freezer, though. What do we do?\u201D"
+      leftCharacter: {fileID: 21300000, guid: 4ef512584817a624ea113084dcb64d5f, type: 3}
+      rightCharacter: {fileID: 21300000, guid: da755748f1910cb45b3ffe8fb42d7245, type: 3}
+    - text: "[Pizzaface] \u201CI\u2019m just going to lay down here until you guys
+        get back...so tired\u2026\u201D"
+      leftCharacter: {fileID: 21300000, guid: 4ef512584817a624ea113084dcb64d5f, type: 3}
+      rightCharacter: {fileID: 21300000, guid: da755748f1910cb45b3ffe8fb42d7245, type: 3}
+    - text: "[Mrs. M] \u201COk, we have to act fast. Pizzaface and the kitchen are
+        depending on us! Meathead, use your magnificent strength to open the Freezer
+        door. Watch out for that nasty goop!\u201D"
+      leftCharacter: {fileID: 21300000, guid: 4ef512584817a624ea113084dcb64d5f, type: 3}
+      rightCharacter: {fileID: 21300000, guid: da755748f1910cb45b3ffe8fb42d7245, type: 3}
+    decisions:
+    - buttonText: Let Meathead do his thing with the door.
+      nextEvent: 
+  - name: Climax_Freezer
+    background: {fileID: 21300000, guid: e5ac7f872b65ba94d8bb71cb3449643b, type: 3}
+    dialogues:
+    - text: Meathead manages to squeeze his meaty fingers in a crack in the door and
+        with one big OOMPH the door begins to slowly open.
+      leftCharacter: {fileID: 0}
+      rightCharacter: {fileID: 0}
+    - text: 
+      leftCharacter: {fileID: 0}
+      rightCharacter: {fileID: 0}
+    - text: 
+      leftCharacter: {fileID: 0}
+      rightCharacter: {fileID: 0}
+    - text: 
+      leftCharacter: {fileID: 0}
+      rightCharacter: {fileID: 0}
+    - text: 
+      leftCharacter: {fileID: 0}
+      rightCharacter: {fileID: 0}
+    - text: 
+      leftCharacter: {fileID: 0}
+      rightCharacter: {fileID: 0}
+    - text: 
+      leftCharacter: {fileID: 0}
+      rightCharacter: {fileID: 0}
+    decisions:
+    - buttonText: 
       nextEvent: 
 --- !u!4 &1375661090
 Transform:
@@ -1116,7 +1350,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 012155789efc321428360cdeab7d7064, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 62419d00f79834641b0fc33ab784c10e, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1248,10 +1482,10 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 20
     m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
+    m_BestFit: 1
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -1322,9 +1556,9 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 18
+    m_FontSize: 30
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 0
@@ -1597,7 +1831,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0.35310903}
-  m_AnchoredPosition: {x: 0, y: 12.505725}
+  m_AnchoredPosition: {x: 0, y: 12.505737}
   m_SizeDelta: {x: -50, y: -24.98855}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2009921956
