@@ -82,6 +82,13 @@ public class EventManager : MonoBehaviour
             item.button.gameObject.SetActive(false);
         }
 
+        if (string.IsNullOrEmpty(name))
+        {
+            titleScreen.SetActive(true);
+            gameScreen.SetActive(false);
+            return;
+        }
+
         List<Event> eventQuery = events.Where(x => x.name == name).ToList();
         if (eventQuery.Count > 1)
         {
@@ -89,10 +96,7 @@ public class EventManager : MonoBehaviour
         }
         else if (eventQuery.Count == 0)
         {
-            if (string.IsNullOrEmpty(name))
-                Debug.LogWarning(string.Format("HEY DUMMY! You left an event name blank so I'm stopping."));
-            else
-                Debug.LogWarning(string.Format("HEY DUMMY! There are no events named {0} so I'm stopping.", name));
+            Debug.LogWarning(string.Format("HEY DUMMY! There are no events named {0} so I'm stopping.", name));
             return;
         }
 
