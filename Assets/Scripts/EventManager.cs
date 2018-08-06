@@ -88,6 +88,11 @@ public class EventManager : MonoBehaviour
             gameScreen.SetActive(false);
             return;
         }
+        else if(name.ToLower() == "exitgame")
+        {
+            QuitGame();
+            return;
+        }
 
         List<Event> eventQuery = events.Where(x => x.name == name).ToList();
         if (eventQuery.Count > 1)
@@ -224,7 +229,15 @@ public class EventManager : MonoBehaviour
     {
         if (currentEvent.decisions.Length == 0)
         {
-            Debug.LogWarning("There are no decisions at the end of this event.");
+            if (string.IsNullOrEmpty(currentEvent.defaultNextEvent))
+            {
+                Debug.LogWarning("There are no decisions at the end of this event, and defaultNextEvent is empty.");
+            }
+            else
+            {
+                StartCoroutine(PlayEventOnContinueFlag(currentEvent.defaultNextEvent));
+                return;
+            }
         }
         else if (currentEvent.decisions.Length > buttons.Length)
         {
@@ -247,5 +260,16 @@ public class EventManager : MonoBehaviour
 
         string nextEvent = currentEvent.decisions[buttonIndex].nextEvent;
         PlayEvent(nextEvent);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
+    private IEnumerator PlayEventOnContinueFlag(string name)
+    {
+        yield return new WaitUntil(ConsumeContinueFlag);
+        PlayEvent(name);
     }
 }

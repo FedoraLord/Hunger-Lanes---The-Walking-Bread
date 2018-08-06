@@ -8,6 +8,7 @@ using UnityEngine;
 public class Event : System.Object
 {
     public string name;
+    public string defaultNextEvent;
     public Sprite background;
     public Dialogue[] dialogues;
     public Decision[] decisions;
